@@ -20,6 +20,8 @@
             <a href="#events">Events</a>
             <a href="#join">Join</a>
             <a href="#contact">Contact</a>
+
+            <!-- ✅ COPY IP BUTTON -->
             <a href="#" class="nav-btn" onclick="copyIP()">Join Server</a>
         </div>
     </div>
@@ -36,41 +38,46 @@
     <div class="about-container">
         <div class="about-text">
             <h2>About the Server</h2>
-            <p>Minecraft survival with custom structures, dungeons, and community gameplay.</p>
+            <p>
+                Minecraft ultimate survival with custom structures and dungeons.
+                A peaceful and community-friendly server.
+            </p>
         </div>
         <div class="about-image">
-            <img src="bg.webp">
+            <img src="bg.webp" />
         </div>
     </div>
 </section>
 
 <section id="features">
     <h2>Gameplay Mechanics</h2>
-    <p class="features-intro">Experience survival like never before.</p>
+    <p class="features-intro">
+        Experience Minecraft survival like never before.
+    </p>
 
     <div class="features-grid">
         <div class="feature-item">
             <i class="fas fa-bolt fa-3x"></i>
             <h3>Custom Plugins</h3>
-            <p>Unique gameplay systems.</p>
+            <p>Unique server-side gameplay.</p>
         </div>
         <div class="feature-item">
             <i class="fas fa-shield-alt fa-3x"></i>
             <h3>Balanced Gameplay</h3>
-            <p>Fair progression system.</p>
+            <p>Fair progression and anti-cheat.</p>
         </div>
         <div class="feature-item">
             <i class="fas fa-users fa-3x"></i>
             <h3>Community Events</h3>
-            <p>Seasonal competitions.</p>
+            <p>Seasonal events and competitions.</p>
         </div>
     </div>
 </section>
 
-<!-- 🌌 GALLERY SLIDER -->
+<!-- 🔥 GALLERY SLIDER -->
 <section id="gallery">
     <h2>Server Gallery</h2>
-    <p class="gallery-intro">Explore builds and moments.</p>
+    <p class="gallery-intro">Explore builds and moments from players.</p>
 
     <div class="gallery-slider">
         <div class="slider-track" id="sliderTrack">
@@ -110,7 +117,7 @@
     <p>© 2025 LUMINARIA SMP</p>
 </footer>
 
-<!-- 🌌 SCRIPTS -->
+<!-- 🔥 SLIDER + COPY SCRIPT -->
 <script>
 let index = 0;
 const track = document.getElementById("sliderTrack");
@@ -133,7 +140,7 @@ setInterval(() => {
     updateSlide();
 }, 4000);
 
-/* COPY IP */
+/* ✅ COPY IP FUNCTION */
 function copyIP() {
     const ip = "luminaria.ultramc.co";
     navigator.clipboard.writeText(ip);
