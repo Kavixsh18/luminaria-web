@@ -64,7 +64,7 @@ body {
 
 /* Header */
 .header {
-    background: url("bg.png") no-repeat center 30% / cover;
+    background: url("bg.webp") no-repeat center 30% / cover;
     height: 60vh;
     position: relative;
     display: flex;
