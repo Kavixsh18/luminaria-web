@@ -20,7 +20,9 @@
             <a href="#events">Events</a>
             <a href="#join">Join</a>
             <a href="#contact">Contact</a>
-            <a href="#join" class="nav-btn">Join Server</a>
+
+            <!-- ✅ COPY IP BUTTON -->
+            <a href="#" class="nav-btn" onclick="copyIP()">Join Server</a>
         </div>
     </div>
 </nav>
@@ -72,7 +74,7 @@
     </div>
 </section>
 
-<!-- 🔥 HORIZONTAL SLIDER -->
+<!-- 🔥 GALLERY SLIDER -->
 <section id="gallery">
     <h2>Server Gallery</h2>
     <p class="gallery-intro">Explore builds and moments from players.</p>
@@ -80,7 +82,7 @@
     <div class="gallery-slider">
         <div class="slider-track" id="sliderTrack">
             <div class="slide"><img src="bg1.webp"></div>
-            <div class="slide"><img src="b2.webp"></div>
+            <div class="slide"><img src="bg2.webp"></div>
             <div class="slide"><img src="bg3.webp"></div>
         </div>
 
@@ -115,7 +117,7 @@
     <p>© 2025 LUMINARIA SMP</p>
 </footer>
 
-<!-- 🔥 SLIDER SCRIPT -->
+<!-- 🔥 SLIDER + COPY SCRIPT -->
 <script>
 let index = 0;
 const track = document.getElementById("sliderTrack");
@@ -137,6 +139,20 @@ setInterval(() => {
     if (index >= slides.length) index = 0;
     updateSlide();
 }, 4000);
+
+/* ✅ COPY IP FUNCTION */
+function copyIP() {
+    const ip = "luminaria.ultramc.co";
+    navigator.clipboard.writeText(ip);
+
+    const btn = document.querySelector(".nav-btn");
+    const old = btn.innerText;
+
+    btn.innerText = "Copied!";
+    setTimeout(() => {
+        btn.innerText = old;
+    }, 2000);
+}
 </script>
 
 </body>
