@@ -5,7 +5,7 @@
     <title>LUMINARIA SMP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#features">Features</a>
-            <a href="#gallery">Gallery</a> <!-- ADDED -->
+            <a href="#gallery">Gallery</a>
             <a href="#events">Events</a>
             <a href="#join">Join</a>
             <a href="#contact">Contact</a>
@@ -37,12 +37,12 @@
         <div class="about-text">
             <h2>About the Server</h2>
             <p>
-                Minecraft ultimate survival. Experience a world generation with custom structures and dungeons.  
-                A peaceful server and community-friendly, perfect for chilling with friends and other players.
+                Minecraft ultimate survival with custom structures and dungeons.
+                A peaceful and community-friendly server.
             </p>
         </div>
         <div class="about-image">
-            <img src="bg.webp" alt="About Luminaria SMP" />
+            <img src="bg.webp" />
         </div>
     </div>
 </section>
@@ -50,59 +50,52 @@
 <section id="features">
     <h2>Gameplay Mechanics</h2>
     <p class="features-intro">
-        Experience Minecraft survival like never before with our carefully crafted features and balanced systems.
+        Experience Minecraft survival like never before.
     </p>
 
     <div class="features-grid">
         <div class="feature-item">
             <i class="fas fa-bolt fa-3x"></i>
             <h3>Custom Plugins</h3>
-            <p>Enhance your experience with unique server-side modifications that add depth and variety to classic survival gameplay.</p>
+            <p>Unique server-side gameplay.</p>
         </div>
         <div class="feature-item">
             <i class="fas fa-shield-alt fa-3x"></i>
             <h3>Balanced Gameplay</h3>
-            <p>Fair progression systems and anti-cheat measures ensure everyone enjoys a level playing field while building and exploring.</p>
+            <p>Fair progression and anti-cheat.</p>
         </div>
         <div class="feature-item">
             <i class="fas fa-users fa-3x"></i>
             <h3>Community Events</h3>
-            <p>Join seasonal challenges, build competitions, and collaborative projects that bring players together for unforgettable adventures.</p>
+            <p>Seasonal events and competitions.</p>
         </div>
     </div>
 </section>
 
-<!-- 🔥 ADDED GALLERY SECTION -->
+<!-- 🔥 HORIZONTAL SLIDER -->
 <section id="gallery">
-    <div class="gallery-container">
-        <h2>Server Gallery</h2>
-        <p class="gallery-intro">
-            Take a look at builds and moments from our players.
-        </p>
+    <h2>Server Gallery</h2>
+    <p class="gallery-intro">Explore builds and moments from players.</p>
 
-        <div class="gallery-grid">
-            <img src="bg1.webp" alt="Build 1" loading="lazy">
-            <img src="bg2.webp" alt="Build 2" loading="lazy">
-            <img src="bg3.webp" alt="Build 3" loading="lazy">
-            <img src="bg1.webp" alt="Build 4" loading="lazy">
-            <img src="bg2.webp" alt="Build 5" loading="lazy">
-            <img src="bg3.webp" alt="Build 6" loading="lazy">
+    <div class="gallery-slider">
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide"><img src="bg1.webp"></div>
+            <div class="slide"><img src="bg2.webp"></div>
+            <div class="slide"><img src="bg3.webp"></div>
         </div>
+
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </section>
 
 <section id="events">
     <h2>Events</h2>
-    <p>
-        We host seasonal challenges and community events to keep gameplay exciting.
-    </p>
-
     <div class="event-card">
-        <img src="event-image.jpg" alt="End Fight" class="event-image" />
+        <img src="event-image.jpg" class="event-image" />
         <div class="event-content">
             <h3>SEASON 4 INCOMING!</h3>
             <p><strong>Date:</strong> MAY __, 2026</p>
-            <p>Join in the End fight and battle for the ultimate victory!</p>
             <a href="#join" class="event-btn">Join Now</a>
         </div>
     </div>
@@ -116,12 +109,35 @@
 
 <section id="contact">
     <h2>Contact Us</h2>
-    <p>For questions or support, reach out on our Discord or social media channels.</p>
 </section>
 
 <footer>
     <p>© 2025 LUMINARIA SMP</p>
 </footer>
+
+<!-- 🔥 SLIDER SCRIPT -->
+<script>
+let index = 0;
+const track = document.getElementById("sliderTrack");
+const slides = document.querySelectorAll(".slide");
+
+function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function moveSlide(direction) {
+    index += direction;
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    updateSlide();
+}
+
+setInterval(() => {
+    index++;
+    if (index >= slides.length) index = 0;
+    updateSlide();
+}, 4000);
+</script>
 
 </body>
 </html>
